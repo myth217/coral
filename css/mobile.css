@@ -1,0 +1,446 @@
+/* body */
+/* メニュー切り替えCSS */
+.tab-group{
+    display: flex;
+    /* justify-content: center; */
+    text-align: center;
+    padding: 0px;
+
+  }
+  .tab{
+    width: 20%;
+    
+    flex-grow: 1;
+    font-size: 13px;
+    padding:3px;
+    list-style:none;
+    border:solid 1px #CCC;
+    text-align: center;
+    cursor:pointer;
+    font-family:'Courier New', Courier, monospace;
+
+
+  }
+  .panel-group{
+    height:100%;
+    /* border:solid 1px #CCC; */
+    border-top:none;
+    /* background:#eee; */
+  }
+  .panel{
+    display:none;
+  }
+  .tab.is-active{
+    background:rgb(33, 34, 35);
+    color:#FFF;
+    transition: all 0.2s ease-out;
+  }
+  .panel.is-show{
+    display:block;
+  }
+
+body  {
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    background-color: #fff3f4;
+    /* font-family: Monotype Corsiva; */
+}
+
+html {
+    /* ダブルタップによる画面拡大を抑制するため */
+    touch-action: manipulation;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: coral;
+    color: #2d3436;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/* ----------ここから全部ハンバーガメニューに関わるスタイル---------------------------------*/
+#nav-container {
+    position: fixed;
+    height: 80%;
+    width: 100%;
+    pointer-events: none;
+}
+
+#nav-container .bg {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    /* height: calc(100% - 70px); */
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s;
+    background: #000;
+}
+
+#nav-container:focus-within .bg {
+    visibility: visible;
+    opacity: .6;
+}
+
+#nav-container * {
+    visibility: visible;
+}
+
+/*  */
+.button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+    -webkit-appearance: none;
+    border: 0;
+    background: transparent;
+    border-radius: 0;
+    height: 70px;
+    width: 30px;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-left: 25px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* SAKO */
+    left: calc(100% - 75px);
+}
+
+.icon-bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    /* background: #aaa; */
+    background: #2d3436;
+    transition: .3s;
+}
+
+.icon-bar+.icon-bar {
+    margin-top: 5px;
+}
+
+#nav-container:focus-within .button {
+    pointer-events: none;
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(1) {
+    transform: translate3d(0, 8px, 0) rotate(45deg);
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(2) {
+    opacity: 0;
+}
+
+#nav-container:focus-within .icon-bar:nth-of-type(3) {
+    transform: translate3d(0, -8px, 0) rotate(-45deg);
+}
+
+#nav-content {
+    margin-top: 70px;
+    /* padding: 20px; */
+    padding-left: 0;
+    width: 90%;
+    /* max-width: 400px; */
+    position: absolute;
+    top: 0;
+    /* left: calc(100% - 200px); */
+    height: calc(100% - 70px);
+    background: #ececec;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    /* transform: translateX(150%); */
+    transform: translateX( 999%);
+    transition: transform .3s;
+    will-change: transform;
+    contain: paint;
+    /* SAKO */
+    height: 100%;
+    min-width: 180px;
+    width: 15%;
+    left: calc(100% - 180px);
+}
+
+#nav-content button {
+    background-color: #5c6b70;
+    font-size: 13px;
+    margin-left: 5%;
+    width: 90%;
+}
+
+#nav-content ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav-content li a {
+    padding: 5px 5px;
+    display: block;
+    text-transform: uppercase;
+    transition: color .1s;
+}
+
+#nav-content li a:hover {
+    color: #BF7497;
+}
+
+#nav-content li:not(.small)+.small {
+    margin-top: auto;
+}
+
+.small {
+    display: flex;
+    align-self: center;
+}
+
+.small a {
+    font-size: 12px;
+    font-weight: 400;
+    color: #888;
+}
+
+.small a+a {
+    margin-left: 15px;
+}
+
+#nav-container:focus-within #nav-content {
+    transform: none;
+}
+
+/* ----------ここまで全部ハンバーガメニューに関わるスタイル- おわり--------------------------------*/
+
+
+/*************************
+ * ヘッダ全体
+ *************************/
+
+/*************************
+ * メイン全体
+ *************************/
+main {
+    /* background : #ffffff; */
+    /* background : #faece2; */
+    flex       : 1;
+}
+
+/*************************
+ * フッター全体
+ *************************/
+footer {
+    /* background: #FFFFFF; */
+    color      : #000;
+    background : #b87551;
+    background : #f7e5df;
+    background : #c6f7ea;
+    background : #cbdafa;
+    background : #d3e0fa;
+    background : #faece2;
+    background : #FFFFFF;
+    /* background : #d3e0fa; */
+}
+
+.swal-wide {
+    height : 500px;
+    width  : 1100px !important;
+}
+
+.swal-custom {
+    width  : 95vw !important;
+    height : 90vh !important;
+}
+
+/*************************
+ * マイナスボタン ( 活性時 )
+ *************************/
+.sub_on {
+    color      : #FFFFFF;
+    background : crimson !important;
+}
+
+/*************************
+ * マイナスボタン ( 非活性時 )
+ *************************/
+.sub_off {
+    color      : #000;
+    background : darkgray !important;
+}
+
+/*************************
+ * プラスボタン ( 活性時 )
+ *************************/
+.add_on {
+    color      : #FFFFFF;
+    background : rgb(76, 221, 76) !important;
+}
+
+/*************************
+ * プラスボタン ( 非活性時 )
+ *************************/
+.add_off {
+    color      : #000;
+    background : darkgray;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.swal-custom .swal_body {
+    font-family: "Noto Sans JP", sans-serif;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.swal_container {
+    /* display: flex !important; */
+    flex-direction: column !important;
+    /* width: 100vw; */
+    /* height: 100vh; */
+}
+
+.swal_main {
+    flex: 1 !important;
+    height: 65vh !important;
+    overflow: scroll !important;
+}
+
+.allergen_hit {
+    /* font-weight :200; */
+    background  : #FFECEF;
+    color       : rgb(168, 35, 62);
+    font-weight : bold;
+}
+
+.btn-square {
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+}
+.btn-square:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+
+/* .mB20 {
+    /* margin-bottom: 20px; */
+/* } */
+
+/* .icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: rgb(226, 19, 47);
+    border-radius: 50%;
+}
+.iconplus {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: mediumaquamarine;
+    border-radius: 50%;
+}
+
+.icon::before,
+.icon--plus::after {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-top: 2px solid #fff;
+    transform: translateX(-50%);
+}
+
+.icon--plus:after {
+    top: 3px;
+    left: -2px;
+    transform: rotate(90deg);
+} */
+
+
+.icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 50%;
+  }
+
+  .icon::before, .icon--plus::after {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    content: '';
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-top: 2px solid #fff;
+    transform: translateX(-50%);
+  }
+
+  .icon--plus:after {
+    top: 3px;
+    left: -2px;
+    transform: rotate(90deg);
+  }
+
+.orderbtn {
+    display: inline-block;
+    padding: 0.8em 3em;
+    background-color: #e3364a; /* 背景色 */
+    box-shadow: 0 5px 0 #ca1c30; /* 影の太さ・色 */
+    border-radius: 60px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none; /* 文字の下線を消す */
+}
+
+.orderbtn:active {
+box-shadow: none;
+transform: translateY(5px);
+}
+/* ボタン本体 */
+.btnn {
+    display: inline-block;
+    /* padding: 0.8em 3em; */
+    background-color: #e3364a;
+    box-shadow: 0 5px 0 #ca1c30;
+    border-radius: 60px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+/* ボタン本体 */
+.btnn {
+    display: inline-block;
+    padding: 0.8em 3em;
+    background-color: #e3364a;
+    box-shadow: 0 5px 0 #ca1c30;
+    border-radius: 60px;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+  }

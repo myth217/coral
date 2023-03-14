@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<!-- HTML -->
+<html lang="ja">
+
+<!-- HEAD -->
+
+<head>
+
+    <!-- ■■■■■■■■■■ メタ情報 -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="Mon, 1 Jan 1990 00:00:00 GMT">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Crawer対策 -->
+    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ■■■■■■■■■■ 外部ライブラリ -->
+
+    <!-- [ jQuery v3.6.1 ] -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+    <!-- [ Bootstrap v4.6.2 ] -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+    <!-- [ FontAwesome v6.2.0 ] -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js" integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- [ SweetAlert2 v11.4.35 ] -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.35/sweetalert2.min.css" integrity="sha512-doewDSLNwoD1ZCdA1D1LXbbdNlI4uZv7vICMrzxfshHmzzyFNhajLEgH/uigrbOi8ETIftUGBkyLnbyDOU5rpA==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.4.35/sweetalert2.all.min.js" integrity="sha512-PcrPqLSWuaGe8OLSnxRPvqsKuikzNynXFS9SZUhDqM7JciWTBT6Np1A3UsTyTjzdk232XzYR+4p+fsaMujEKdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- iphoneSEクラスの画面サイズ対応(viewport-extra) -->
+    <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.0.3/dist/viewport-extra.min.js"></script>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" > -->
+
+
+    <!-- ■■■■■■■■■■ ローカルファイル -->
+
+    <!-- Css -->
+    <!-- <link rel="stylesheet" type="text/css" href="./css/common.css"> -->
+    <link rel="stylesheet" type="text/css" href="./css/mobile.css">
+
+    <!-- JavaScript -->
+    <script type='text/javascript' defer='defer' src='./js/alert.js'></script>
+    <script type='text/javascript' defer='defer' src='./js/mobile.js'></script>
+    <!-- 本製造では無いのでコメントアウト -->
+    <!-- <script type='text/javascript' defer='defer' src='./js/mobile_add.js'></script> -->
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" >
+
+</head>
+
+<!-- BODY -->
+
+<body>
+
+
+
+
+    <!-- HEADER -->
+    <header class="fixed-top position-fixed px-3 border-bottom border-secondary" tabindex="0">
+            <div class="pl-2 d-flex flex-row align-items-center h-100" style="font-weight:bold">
+
+                <!-- 多分フォントは変更すべき -->
+                <div id="store_name">CORAL</div>
+                <div class="pl-2">メニュー</div>
+            </div>
+            <!-- ここに切り替えのできるメニューバーを設置-->
+
+
+
+        <!--メニュー切り替え-->
+     
+            <!-- <div class="pl-2 mt-1" style="font-size:0.75rem;">注文する商品の数量を入力して下さい</div> -->
+    </header>
+
+
+
+    
+    <!-- MENU ( NAV ) -->
+    <nav id="nav-container" class="fixed-top">
+
+        <!-- 影 -->
+        <div class="bg"></div>
+
+        <!-- ハンバーガーメニュー -->
+        <div id="nav-button" class="button" tabindex="0">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+           
+         
+        </div>
+
+        <!--  -->
+
+        <!-- ハンバーガーメニューの中身-->
+        <div id="nav-content" class="pt-1" tabindex="0">
+
+            <div id="nav-item" class="border-top border-bottom border-dark" style="background-color:#a8f8e1;">
+                <label class="mb-0 pl-2">メニュー</label>
+            </div>
+
+            <div class="mt-1 mb-1">
+                <button id="allergen" class="btn d-block text-white text-left" style="" type="button" onclick="click_nav_menu(this)">
+						<i class="fa fa-language"></i>
+						<label class="ml-1 mb-0">language</label>
+					</button>
+            </div>
+
+            <div class="mt-1 mb-1">
+                <button id="allergen" class="btn d-block text-white text-left" type="button">
+                        <i class="fa-brands fa-instagram"></i>
+						<a class="ml-1 mb-0" href="https://www.instagram.com/"  style="color: white;">instagram</a>
+					</button>
+            </div>
+
+            <div class="mt-1 mb-1">
+                <button id="allergen" class="btn d-block text-white text-left" style="" type="button">
+                        <i class="fa-solid fa-location-dot"></i>
+						<label class="ml-1 mb-0">location</label>
+					</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="w-100 " style="height:90%; background-color:#FFFFFF; overflow-y:scroll; ">
+
+        <div class="tab-panel">
+            <!--タブ-->
+            <ul class="tab-group">
+            <li class="tab tab-A is-active">おすすめ</li>
+            <li class="tab tab-B">コーヒー</li>
+            <li class="tab tab-C">紅茶</li>
+            <li class="tab tab-D">ジュース</li>
+            <li class="tab tab-E">フード</li>   
+            <li class="tab tab-F">ランチ</br>～15:00</li>  
+        </ul>
+        
+        <!--タブを切り替えて表示するコンテンツ-->
+        <div class="panel-group">
+            <div class="panel tab-A is-show" id="recommend"></div>
+            <div class="panel tab-B"  id="coffee"></div>
+            <div class="panel tab-C"  id="tea"></div>
+            <div class="panel tab-D"  id="softdrink"></div>
+            <div class="panel tab-E"  id="food"></div>
+            <div class="panel tab-F"  id="sandwich"></div>
+
+        </div>
+        </div>
+        
+        <div id="product"></div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="d-flex fixed-bottom invisible border-top border-secondary" style="height:12%; max-height:100px; ">
+        <div class="d-flex justify-content-right align-items-center" style="width: 50%; min-width:225px; margin-left: 5%; background-color: transparent;">
+            <div class="ml-4">
+                <div class='float-left text-center' style="min-width:50px;">個数</div>
+                <div id='total_lot' class='float-left text-right'  style="min-width:55px;">0</div>
+                <div class='float-left ml-2' style="min-width:50px;">点</div>
+                <div class='d-block'>
+                    <div class='float-left text-center' style="min-width:50px;">合計</div>
+                    <div id='total_price' class='float-left text-right'  style="min-width:55px;">0</div>
+                    <div class='float-left ml-2' style="min-width:50px;">円 (税込)</div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-end align-items-center" style="width:45%; /*max-width:160px;*/ margin-right: 5%;background-color: transparent;">
+
+                <!-- <button id='order' type="button" class="btn rounded-pill" style="height:50px; background-color: #9c5f40; color: #FFFFFF;"> -->
+                    <!-- <i class="fa-solid fa-cart-shopping"></i>  -->
+                <!-- </button> -->
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+

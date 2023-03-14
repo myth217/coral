@@ -1,0 +1,46 @@
+/* body */
+
+body {
+    /* 色変更
+    目に優しい 
+    モダン*/
+    /* background-color: #c4faba; */
+    overflow-y: scroll;
+}
+
+header {
+    width: 100%;
+}
+
+.ttt2 {
+    animation: pounding .5s linear infinite alternate;
+}
+
+.pointer {
+    pointer-events: none;
+}
+
+@keyframes pounding {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.zaiko_button {
+    width: 60px;
+    margin: auto;
+    font-size: 40px;
+    /* padding-top: -px; */
+}
+
+.textdecoration_linethrough {
+    text-decoration: line-through;
+}
+
+.swal-wide {
+    height: 500px;
+    width: 1100px !important;
+}
